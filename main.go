@@ -6,14 +6,6 @@ import (
 	"net/http"
 )
 
-func Home(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "THIS IS HOME PAGE")
-}
-
-func About(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, fmt.Sprintf("This is about page"))
-}
-
 const PORTNUMBER = ":8080"
 
 func divide(w http.ResponseWriter, r *http.Request) {
@@ -39,10 +31,10 @@ func divideValues(x, y float64) (float64, error) {
 	// result :=
 	return (x / y), nil
 }
+
 func main() {
 	http.HandleFunc("/", Home)
 	http.HandleFunc("/about", About)
-	http.HandleFunc("/divide", divide)
 	// http.HandleFunc("/", func(w http.ResponseWriter, request *http.Request) {
 	// 	n, err := fmt.Fprintf(w, "Hello world")
 
