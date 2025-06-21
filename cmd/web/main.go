@@ -3,6 +3,7 @@ package main
 import (
 	"errors"
 	"fmt"
+	"myapp/pkg/handlers"
 	"net/http"
 )
 
@@ -33,8 +34,8 @@ func divideValues(x, y float64) (float64, error) {
 }
 
 func main() {
-	http.HandleFunc("/", Home)
-	http.HandleFunc("/about", About)
+	http.HandleFunc("/", handlers.Home)
+	http.HandleFunc("/about", handlers.About)
 	// http.HandleFunc("/", func(w http.ResponseWriter, request *http.Request) {
 	// 	n, err := fmt.Fprintf(w, "Hello world")
 
